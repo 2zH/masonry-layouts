@@ -27,15 +27,11 @@ const mockData = Array(20).fill().map(newStack)
 
 const stackSizeList = mockData
   .reduce((result, stack) => {
-    const { stackList, currentWidth, line = 0 } = result
-    return pushStack(stack,{
-      stackList,
-      currentWidth,
-      line
-    }, {
+    const options = {
       spacing: 5,
       viewPortWidth
-    })
+    }
+    return pushStack(stack, result, options)
   }, {
     stackList: [],
     currentWidth: viewPortWidth
